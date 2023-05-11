@@ -1,0 +1,152 @@
+.modalForm {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 9999; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    background-color: rgba(0, 0, 0, 0.6); /* Черный с непрозрачностью */
+
+}
+
+.modal-content-form {
+    position: absolute;
+    z-index: 5;
+    background: #ffffff;
+    margin: auto; /* 10% сверху и по центру */
+    height: fit-content;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 70px;
+    max-width: 900px; /* Может быть больше или меньше, в зависимости от размера экрана */
+    min-width: 200px;
+
+    @media (max-width: 1024px) {
+        max-width: 85%;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 90%;
+        padding: 50px;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 90%;
+        padding: 50px 20px;
+    }
+}
+
+/* Кнопка закрытия */
+.closeForm {
+    position: absolute;
+    right: -30px;
+    top: -30px;
+
+    @media (max-width: 1024px) {
+        right: 10px;
+        top: 10px;
+    }
+}
+
+.closeForm:hover,
+.closeForm:focus{
+    color: #aaa;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal {
+    &-title {
+        font-family: 'Russo One';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 140%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #0A001C;
+
+        @media (max-width: 560px) {
+            font-size: 30px;
+        }
+
+        @media (max-width: 560px) {
+            font-size: 20px;
+        }
+    }
+
+    &-text {
+        margin: 36px auto 0 auto;
+        max-width: 509px;
+        font-family: 'Manrope';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 160%;
+        text-align: center;
+        color: #0A001C;
+
+        @media (max-width: 480px) {
+            max-width: 100%;
+        }
+    }
+
+    &-form {
+        max-width: 350px;
+        margin: 40px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+
+        &-input {
+            width: 100%;
+            padding: 14px 15px 12px 15px;
+            border: 1px solid #B0B0B0;
+            border-radius: 6px;
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 140%;
+                color: #E3E3E3;
+            }
+        }
+
+        &-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #00860D 0%, #00C142 100%);
+            text-transform: uppercase;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 140%;
+            color: #ffffff;
+
+            &:disabled {
+                opacity: 0.4;
+            }
+        }
+    }
+}
+
+.modal-button {
+    width: 100%;
+}
+
+.modal-checkbox {
+    display: flex;
+    column-gap: 15px;
+}
+
+.error-input {
+    border: 1px solid red;
+}
+

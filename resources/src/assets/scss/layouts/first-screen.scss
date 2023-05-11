@@ -1,0 +1,137 @@
+#first-screen {
+    position: relative;
+    height: 640px;
+
+    @media (max-width: 768px) {
+        height: unset;
+    }
+}
+
+.first-screen {
+  //background: url("/assets/img/first-screen-bg.png") 100% 100% no-repeat;
+  //background-size: cover;
+  //padding-bottom: 95px;
+
+    &__fon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 640px;
+
+        @media (max-width: 768px) {
+            position: relative;
+            height: 200px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.utp {
+  padding: 48px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  max-width: 630px;
+  background-color: #fff;
+  backdrop-filter: blur(15px);
+  border-radius: 0px 0px 15px 15px;
+
+  @media (max-width: 768px) {
+      margin: 0 auto;
+      align-items: center;
+      padding: 30px 0 70px 0;
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: #2D2D2D;
+    text-shadow: 0.5px 0 1px #2F2D4F;
+
+      @media (max-width: 768px) {
+          text-align: center;
+      }
+
+      @media (max-width: 480px) {
+          font-weight: 900;
+          font-size: 30px;
+          line-height: 38px;
+          text-align: center;
+          text-transform: uppercase;
+      }
+
+      @media (max-width: 360px) {
+          font-size: 28px;
+      }
+  }
+
+  &__text {
+    width: 465px;
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #2D2D2D;
+
+      @media (max-width: 768px) {
+          text-align: center;
+      }
+
+      @media (max-width: 480px) {
+          width: 100%;
+      }
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+
+  &__footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+
+      @media (max-width: 540px) {
+          display: none;
+      }
+
+      @media (max-width: 768px) {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          column-gap: 30px;
+          justify-content: center;
+          padding-right: 20px;
+          padding-left: 20px;
+      }
+
+    &-item {
+      &:not(:last-child) {
+        border-right: 1px solid #2D2D2D;
+        padding-right: 30px;
+      }
+
+      &-title {
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 44px;
+        color: #2D2D2D;
+      }
+
+      &-text {
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        color: #2D2D2D;
+      }
+    }
+  }
+}
